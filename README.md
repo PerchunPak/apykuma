@@ -28,7 +28,7 @@ await apykuma.start(
 )
 ```
 
-It is important to start `apykuma` before your service starts.
+It is important to start `apykuma` after your service starts.
 
 ## Differences from `pykuma`
 
