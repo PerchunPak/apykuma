@@ -3,7 +3,7 @@ import asyncio
 import aiohttp
 
 
-def start(
+async def start(  # function is async to ensure that event loop is running
     url: str,
     interval: int = 60,
 ) -> asyncio.Task[None]:
