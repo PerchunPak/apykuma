@@ -8,9 +8,26 @@ name = "apykuma"
 description = "Small library to notify Uptime Kuma that the service is up"
 version = "0.1.0"
 license = "MIT"
-authors = []
+authors = ["Perchun Pak <pypi@perchun.it>"]
 readme = "README.md"
 repository = "https://github.com/PerchunPak/apykuma"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Monitoring",
+    "Typing :: Typed",
+]
 
 
 [tool.poetry.dependencies]
