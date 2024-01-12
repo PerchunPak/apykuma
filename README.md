@@ -23,9 +23,8 @@ Then include it in your code:
 import apykuma
 
 await apykuma.start(
-    service_name="My service",
     url="https://my-service.com",
-    interval=60,  # Optional, default is 60
+    interval=60,  # Optional; default is 60 seconds
 )
 ```
 
