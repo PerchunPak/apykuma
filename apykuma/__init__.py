@@ -1,18 +1,16 @@
-import aiohttp
 import asyncio
+
+import aiohttp
 
 
 def start(
     url: str,
     interval: int = 60,
-) -> asyncio.Task:
+) -> asyncio.Task[None]:
     return asyncio.create_task(_loop(url, interval))
 
 
-async def _loop(
-    url: str,
-    interval: int = 60
-) -> None:
+async def _loop(url: str, interval: int = 60) -> None:
     async with aiohttp.ClientSession() as session:
         while True:
             await ping(session, url)
