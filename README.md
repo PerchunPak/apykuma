@@ -7,18 +7,39 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Python support versions badge (from pypi)](https://img.shields.io/pypi/pyversions/apykuma)](https://www.python.org/downloads/)
 
-Small library to notify Uptime Kuma that the service is up
+Small library to notify Uptime Kuma that the service is up.
+Only async applications are supported.
 
-## Features
+## Usage
 
-- Free! We don't want any money from you!
-- Add yours!
-
-## Installing
+Firstly, install the library:
 
 ```bash
 pip install apykuma
 ```
+
+Then include it in your code:
+
+```python
+import apykuma
+
+await apykuma.start(
+    service_name="My service",
+    url="https://my-service.com",
+    interval=60,  # Optional, default is 60
+)
+```
+
+It is important to start `apykuma` before your service starts.
+
+## Differences from `pykuma`
+
+https://github.com/oliverstech/pykuma
+
+That library is great, but it has some problems:
+
+- It uses globals, which I personally don't like
+- It blocks the loop every time it sends a request, because it uses `requests` library instead of `aiohttp`. See also https://github.com/oliverstech/pykuma/issues/2.
 
 ## Installing for local developing
 
@@ -56,26 +77,6 @@ All configuration happens in `config.yml`, or with enviroment variables.
 ### If something is not clear
 
 You can always write me!
-
-## Example
-
-```py
-from apykuma.example import some_function
-
-print(some_function(3, 4))
-# => 7
-```
-
-## Updating
-
-```bash
-pip install -U apykuma
-```
-
-### For local development
-
-For updating, just re-download repository (do not forget save config),
-if you used `git` for downloading, just run `git pull`.
 
 ## Thanks
 
