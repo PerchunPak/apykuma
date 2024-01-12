@@ -3,6 +3,11 @@
 We follow [Semantic Versions](https://semver.org/) style.
 
 
-## Version 0.1.0
+## Version 1.0.0.post1
 
-- Repository initialised.
+- Fixed critical typo in README.md, release was created to update README on PyPI ([`dde7688`](https://github.com/PerchunPak/apykuma/commit/dde768834814aa58112f101014ce282d9bfe7ced)).
+
+
+## Version 1.0.0
+
+- Project started.
