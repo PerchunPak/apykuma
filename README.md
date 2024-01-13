@@ -23,8 +23,13 @@ Then include it in your code:
 import apykuma
 
 await apykuma.start(
+    # Required; Push URL from Kuma GUI
     url="https://my-service.com",
-    interval=60,  # Optional; default is 60 seconds
+    # Optional; default is 60 seconds
+    interval=60,
+    # Optional; sleeps for N seconds before pinging Kuma, in case if you run `apykuma` right before starting your service
+    #           (if service fails, `apykuma` won't start as well). The recommended value is 10 seconds
+    delay=0,
 )
 ```
 

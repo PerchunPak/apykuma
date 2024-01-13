@@ -6,11 +6,14 @@ import aiohttp
 async def start(  # function is async to ensure that event loop is running
     url: str,
     interval: int = 60,
+    *,
+    delay: int = 0,
 ) -> asyncio.Task[None]:
-    return asyncio.create_task(_loop(url, interval))
+    return asyncio.create_task(_loop(url, interval, delay))
 
 
-async def _loop(url: str, interval: int = 60) -> None:
+async def _loop(url: str, interval: int = 60, delay: int = 0) -> None:
+    await asyncio.sleep(delay)
     async with aiohttp.ClientSession() as session:
         while True:
             await ping(session, url)
