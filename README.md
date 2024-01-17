@@ -20,6 +20,7 @@ pip install apykuma
 Then include it in your code:
 
 ```python
+import logging
 import apykuma
 
 await apykuma.start(
@@ -30,6 +31,13 @@ await apykuma.start(
     # Optional; sleeps for N seconds before pinging Kuma, in case if you run `apykuma` right before starting your service
     #           (if service fails, `apykuma` won't start as well). The recommended value is 10 seconds
     delay=0,
+    # Optional; function that is called when during ping we encourage an error
+    #           it is done to notify you about (e.g.) network errors, and to not
+    #           stop the process of pinging kuma on such errors
+    #
+    #           by default, it logs an error using `logging` library (default value is shown below),
+    #           also supports async functions
+    handle_exception=lambda e: logging.getLogger("apykuma").exception(e),
 )
 ```
 
