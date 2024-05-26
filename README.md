@@ -11,21 +11,25 @@ Only async applications are supported.
 
 ## Usage
 
-Firstly, install the library:
+Create a new Push monitor on your Kuma instance:
+
+![image](https://github.com/PerchunPak/apykuma/assets/68118654/f50bbcbc-5717-40a3-8e1c-759b57d3f87a)
+
+Then, install the library:
 
 ```bash
 pip install apykuma
 ```
 
-Then include it in your code:
+And include it in your code:
 
 ```python
 import logging
 import apykuma
 
 await apykuma.start(
-    # Required; Push URL from Kuma GUI
-    url="https://my-service.com",
+    # Required; URL copied from the image above
+    url="https://kuma.example.com/api/push/63MlSOY4CM?status=up&msg=OK&ping=",
     # Optional; default is 60 seconds
     interval=60,
     # Optional; sleeps for N seconds before pinging Kuma, in case if you run `apykuma` right before starting your service
